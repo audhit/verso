@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>FizzBuzz Application (Verso GmbH)</h1>
+  <input
+    [(ngModel)]="inputValue"
+    placeholder="Type 'stop' to activate STOP button"
+  />
+  <button [disabled]="!stopButtonActivated" (click)="onStopClicked()">
+    STOP
+  </button>
+
+  <div
+    class="outputDIV"
+    *ngFor="let number of numbers; let i = index"
+    [ngStyle]="{ 'background-color': getBackground(i) }"
+  >
+    {{ number }}
+  </div>
+</div>
